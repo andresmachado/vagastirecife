@@ -95,10 +95,7 @@ urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 DATABASES = {
-    'default': {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        dj_database_url.config()
-    }   
+    'default': dj_database_url.config(default=os.environ["DATABASE_URL"])
 }
 
 conn = psycopg2.connect(
