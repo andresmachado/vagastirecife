@@ -11,3 +11,7 @@ lib
 lib64
 *.pyc
 *.pyo
+local_settings.py
+db.sqlite3
+myvenv
+__pycache__
