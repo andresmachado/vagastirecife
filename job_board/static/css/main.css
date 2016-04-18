@@ -123,6 +123,28 @@
     display: none;
 }
 
+/* FOOTER */
+
+footer ul {
+    list-style: none;
+    margin-top: 1em;
+}
+
+footer ul li {
+    display: inline-block;
+    padding-right: 0.3em;
+}
+
+footer {
+    font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
+    margin-top: 0.5em;
+    border-top: 1px solid #ecf0f1;
+}
+
+footer p {
+    margin-top: 1em;
+}
+
 /* ALERT CUSTOMIZING */
 
 .messages {
