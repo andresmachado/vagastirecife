@@ -89,8 +89,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
+
 urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
+DATABASES['default'] =  dj_database_url.config(os.environ['DATABASE_URL'])
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 conn = psycopg2.connect(
     database=url.path[1:],
