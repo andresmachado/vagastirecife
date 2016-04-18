@@ -96,7 +96,7 @@ url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
 DATABASES = {
     'default': {
-        dj_database_url.config(default=os.environ['DATABASE_URL'])
+        dj_database_url.config(default=os.environ['DATABASE_URL']),
         "ENGINE": "django.db.backends.postgresql_psycopg2",
     }   
 }
