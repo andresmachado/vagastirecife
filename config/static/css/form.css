@@ -1,0 +1,26 @@
+form p {
+	color: #34495E;
+    font-family: 'Lato', sans-serif;
+}
+
+.form-title {
+	color: #34495E;
+	font-family: 'Lato', sans-serif;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+#id_category, #id_job_type {
+    margin-left: 0.5em;
+    padding: 4px;
+}

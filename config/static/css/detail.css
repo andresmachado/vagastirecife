@@ -1,0 +1,85 @@
+h1 {
+	margin: 0;
+}
+
+.job-detail {
+	font-family: 'Lato', sans-serif;
+}
+
+.detail-title {
+	margin-top: 0.3em;
+	font-size: 2.3em;
+    color: #34495e;
+}
+
+.detail-info {
+	margin: 1.5em 0;
+}
+
+.share {
+	margin-top: 1.5em;
+}
+
+.detail-info span {
+	margin-right: 1em;
+	margin-bottom: 1.5em;
+}
+
+.detail-description h4, .detail-about h4 {
+	margin: 1em 0;
+	font-weight: bolder;
+	color: #34495e;
+}
+
+.detail-email {
+	margin-top: 2em;
+	border-top: 1px solid #bdc3c7;
+	border-bottom: 1px solid #bdc3c7;
+}
+
+.detail-email .row-apply {
+	margin: 0.8em 0;
+}
+
+.detail-email p {
+	color: #bdc3c7;
+}
+
+.detail-email i {
+	color: #27ae60;
+	margin: 0.25em 0;
+	font-size: 4em;
+}
+
+.job-category {
+	color: #34495e;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+
+.detail-timestamp {
+	margin: 0;
+	text-transform: uppercase;
+	color: #bdc3c7;
+	font-size: 1.1em;
+}
+
+.detail-info span {
+	margin-bottom: 0.5em;
+}
+
+.detail-share span {
+	margin-right: 0.1em;
+}
+
+.detail-share .face{
+	color: #3D5A98;	
+}
+
+.detail-share .link{
+	color: #0077B5;	
+}
+
+.detail-share .twit{
+	color: #55ACEE;	
+}
