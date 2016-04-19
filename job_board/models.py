@@ -1,7 +1,8 @@
 from django.db import models
 from django.db.models.signals import pre_save
-
 from django.utils.text import slugify
+from django.core.urlresolvers import reverse
+
 
 class Job(models.Model):
     published = models.BooleanField(default=False)
@@ -25,6 +26,9 @@ class Job(models.Model):
     class Meta:
         ordering = ['-timestamp']
 
+    def get_absolute_url(self):
+        return reverse("job_detail", kwargs={"slug": self.slug})
+
 
 class Category(models.Model):
     title = models.CharField(max_length=100)
@@ -46,7 +50,6 @@ class JobType(models.Model):
         return self.name
 
 # FUNCTIONS
-
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.title)
     if new_slug is not None:
