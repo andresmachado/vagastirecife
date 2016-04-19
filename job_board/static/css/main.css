@@ -125,6 +125,8 @@
 
 /* FOOTER */
 
+
+
 footer ul {
     list-style: none;
     margin-top: 1em;
@@ -208,6 +210,10 @@ footer p {
         display: none;
     }
 
+    .job-title {
+        font-size: 1.1em;
+    }
+
     header nav ul.open {
         height: auto;
     }
@@ -224,5 +230,23 @@ footer p {
         width: 100%;
         text-align: center;
         border-bottom: none;
+    }
+
+    footer ul {
+        display: block;
+        float: none;
+        list-style: none;
+        margin-top: 1em;
+    }
+
+    footer ul li {
+        display: inline-block;
+        padding-right: 0.3em;
+    }
+
+    footer p {
+        float: none;
+        display: block;
+        margin-top: 1em;
     }
 }
