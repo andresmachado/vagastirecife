@@ -29,6 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
 ALLOWED_HOSTS = [".herokuapp.com", ".vagastirecife.com.br", 'vagastirecife.herokuapp.com']
+SITE_ID = 1
 
 
 # Application definition
