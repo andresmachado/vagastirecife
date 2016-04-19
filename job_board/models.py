@@ -4,6 +4,7 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 
 class Job(models.Model):
+    published = models.BooleanField(default=False)
     title = models.CharField(max_length=140)
     company = models.CharField(max_length=140)
     url = models.URLField(blank=True)

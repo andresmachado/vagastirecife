@@ -21,15 +21,15 @@ def job_create(request):
         form = CreateJobForm(request.POST)
         if form.is_valid():
             job = form.save()
-            messages.success(request, "Vaga anunciada com sucesso.")
-            return redirect('job_detail', slug=job.slug)
+            messages.success(request, "Obrigado por anunciar sua vaga. Em breve ela estará disponível.")
+            return redirect('index')
     else:
         form = CreateJobForm()
     return render(request, 'jobs/job_create.html', {'form': form})
 
 def job_list(request):
     categories = Category.objects.all().order_by('title')
-    jobs = Job.objects.all()
+    jobs = Job.objects.filter(published=True)
     context = {
         'jobs': jobs,
         'categories': categories
@@ -38,9 +38,13 @@ def job_list(request):
 
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
-    share_content = quote_plus("Achei esta #vaga de %s. Veja mais #vagas em www.vagastirecife.com.br" % (job.title))
-    context = {
-        'share_content': share_content,
-        'job': job
-    }
-    return render(request, 'jobs/job_detail.html', context)
+    if job.published:
+        share_content = quote_plus("Achei esta #vaga de %s. Veja mais #vagas em www.vagastirecife.com.br" % (job.title))
+        context = {
+            'share_content': share_content,
+            'job': job
+        }
+        return render(request, 'jobs/job_detail.html', context)
+    else:
+        messages.info(request, "Esta vaga ainda não está disponível. Tente novamente mais tarde.")
+        return redirect('index')

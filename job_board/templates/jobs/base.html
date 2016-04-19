@@ -36,6 +36,16 @@
         </div>
     </div>
     <div class="row">
+        <div class="messages col-md-12 col-xs-12 col-lg-12">
+            {% if messages %}
+            <ul class="messages"> 
+            {% for message in messages %}
+                <li {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}> 
+                    <span class="glyphicon glyphicon-ok-circle"></span> {{ message }}
+                </li>
+            {% endfor %}
+            {% endif %}
+        </div>
         <div class="main col-md-9">
             {% block content %}
             {% endblock content %}

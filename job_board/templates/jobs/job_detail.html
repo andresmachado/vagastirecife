@@ -8,7 +8,7 @@
 <div class="container">
   <div class="job-detail row">
     <div class="col-md-10 col-md-offset-1">
-      {% if messages %}
+      <!-- {% if messages %}
         <ul class="messages"> 
         {% for message in messages %}
           <li {% if message.tags %} class="alert-{{ message.tags }}" {% endif %}> 
@@ -16,7 +16,7 @@
           </li>
         {% endfor %}
       {% endif %}
-        </ul>
+        </ul> -->
       <div class="job-detail col-md-9 col-xs-12 col-lg-9">
         <p><a href="{% url "index" %}">← Voltar</a></p>
         <span class="detail-timestamp">{{ job.timestamp|date:'d F' }}</span>
