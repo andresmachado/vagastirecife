@@ -1,3 +1,5 @@
+#!-*- coding: utf8 -*-
+
 from django.utils.six.moves.urllib.parse import quote_plus
 
 from django.shortcuts import render, get_object_or_404, redirect
