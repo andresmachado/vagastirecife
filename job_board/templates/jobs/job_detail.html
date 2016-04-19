@@ -17,7 +17,7 @@
         {% endfor %}
       {% endif %}
         </ul>
-      <div class="col-md-9 col-xs-9">
+      <div class="job-detail col-md-9 col-xs-9">
         <p><a href="{% url "index" %}">← Voltar</a></p>
         <span class="detail-timestamp">{{ job.timestamp|date:'d F' }}</span>
         <h1 class="detail-title">{{ job.title|title }}</h1>
@@ -29,7 +29,7 @@
           <h4>Descrição da vaga</h4>
           <p>{{ job.description|linebreaksbr }}</p>
         </div>
-        <div class="detail-about">
+        <div class="detail-skills">
           <h4>Habilidades necessárias</h4>
           <p>{{ job.skills|linebreaksbr }}</p>
         </div>

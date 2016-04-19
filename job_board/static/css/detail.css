@@ -4,6 +4,7 @@ h1 {
 
 .job-detail {
 	font-family: 'Lato', sans-serif;
+	word-wrap: break-word;
 }
 
 .detail-title {
