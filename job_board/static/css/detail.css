@@ -84,3 +84,9 @@ h1 {
 .detail-share .twit{
 	color: #55ACEE;	
 }
+
+@media screen and (max-width: 420px) {
+	.job-detail h1{
+		font-size: 2.2em;
+	}
+}
