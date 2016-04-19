@@ -1,5 +1,6 @@
 from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView   
 
 from . import views
 from .feeds import LatestJobs
@@ -15,5 +16,6 @@ urlpatterns = [
     url(r'^vagas/(?P<category>[a-zA-Z0-9_.-]+)/$', views.filter_by_category, name="filter_category"),
     url(r'^vagas/adicionar-vaga$', views.job_create, name='job_create'),
     url(r'^vagas/(?P<slug>[\w-]+)$', views.job_detail, name='job_detail'),
-    url(r'^sitemap.xml$', sitemap, {'sitemaps': sitemaps}),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps}),
+    url(r'^robots\.txt$', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
 ]
