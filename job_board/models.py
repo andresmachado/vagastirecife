@@ -1,7 +1,13 @@
 from django.db import models
-from django.db.models.signals import pre_save
+from django.db.models.signals import pre_save, post_save
+
 from django.utils.text import slugify
+
+from django.core.mail import EmailMessage, EmailMultiAlternatives
 from django.core.urlresolvers import reverse
+
+from django.template.loader import render_to_string
+
 
 
 class Job(models.Model):
@@ -69,6 +75,27 @@ def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = create_slug(instance)
 
+def send_admin_notifications(sender, instance, created, **kwargs):
+    if created:
+        html_template = 'emails/notification.html'
+        text_template = 'emails/notification.txt'
 
+        subject, from_email, to = 'Alerta de nova mensagem.', 'contato@vagastirecife.com.br', 'csantos.machado@gmail.com'
+        
+        context = {
+            'title': instance.title, 
+            'timestamp': instance.timestamp
+        }
+
+        html_content = render_to_string(html_template, context)
+        text_content = render_to_string(text_template, context)
+        
+        alert_mail = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        alert_mail.attach_alternative(html_content, 'text/html')
+        alert_mail.send()
+    else:
+        pass
+
+post_save.connect(send_admin_notifications, sender=Job)
 pre_save.connect(pre_save_receiver, sender=Job)
 pre_save.connect(pre_save_receiver, sender=Category)

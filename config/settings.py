@@ -31,6 +31,13 @@ DEBUG = False
 ALLOWED_HOSTS = [".herokuapp.com", ".vagastirecife.com.br", 'vagastirecife.herokuapp.com']
 SITE_ID = 2
 
+ADMINS = [
+    ('Andre', 'csantos.machado@gmail.com')
+]
+
+MANAGERS = [
+    ('Andre', 'csantos.machado@gmail.com')
+]
 
 # Application definition
 
