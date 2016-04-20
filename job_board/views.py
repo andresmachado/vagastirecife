@@ -41,7 +41,7 @@ def job_list(request):
 def job_detail(request, slug):
     job = get_object_or_404(Job, slug=slug)
     if job.published:
-        share_content = quote_plus("Achei esta #vaga de %s. Veja mais #vagas em www.vagastirecife.com.br" % (job.title))
+        share_content = quote_plus("Achei esta #vaga de %s. Veja mais #vagas em www.vagastirecife.com.br" % (job.title.encode('utf8')))
         context = {
             'share_content': share_content,
             'job': job

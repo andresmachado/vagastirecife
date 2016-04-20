@@ -1,3 +1,5 @@
+#!-*- coding: utf8 -*-
+
 from django.contrib.sitemaps import Sitemap
 
 from .models import Job

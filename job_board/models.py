@@ -1,3 +1,5 @@
+#!-*- coding: utf8 -*-
+
 from django.db import models
 from django.db.models.signals import pre_save, post_save
 

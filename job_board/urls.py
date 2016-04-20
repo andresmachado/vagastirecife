@@ -1,3 +1,5 @@
+#!-*- coding: utf8 -*-
+
 from django.conf.urls import include, url
 from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView   
