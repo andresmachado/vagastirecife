@@ -12,8 +12,8 @@ from django.template.loader import render_to_string
 
 class Job(models.Model):
     published = models.BooleanField(default=False)
-    title = models.CharField(max_length=140)
-    company = models.CharField(max_length=140)
+    title = models.CharField(max_length=50)
+    company = models.CharField(max_length=50)
     url = models.URLField(blank=True)
     site = models.URLField(blank=True)
     email = models.EmailField()
