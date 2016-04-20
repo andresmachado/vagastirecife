@@ -29,7 +29,7 @@ class Job(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.title.encode('utf8')
 
     class Meta:
         ordering = ['-timestamp']
@@ -44,7 +44,7 @@ class Category(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.title
+        return self.title.encode('utf8')
 
     class Meta:
         verbose_name_plural = "categories"
@@ -55,7 +55,7 @@ class JobType(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.name
+        return self.name.encode('utf8')
 
 # FUNCTIONS
 def create_slug(instance, new_slug=None):
