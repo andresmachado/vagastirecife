@@ -31,13 +31,16 @@ DEBUG = False
 ALLOWED_HOSTS = [".herokuapp.com", ".vagastirecife.com.br", 'vagastirecife.herokuapp.com']
 SITE_ID = 2
 
-ADMINS = [
-    ('Andre', 'csantos.machado@gmail.com')
-]
+#Email Configurations
+EMAIL_HOST = os.environ['EMAIL_HOST']
+EMAIL_PORT = os.environ['EMAIL_PORT']
+EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS = os.environ['EMAIL_USE_TLS']
 
-MANAGERS = [
-    ('Andre', 'csantos.machado@gmail.com')
-]
+#Mail Admin Configuration
+SERVER_EMAIL = os.environ['SERVER_EMAIL']
+EMAIL_SUBJECT_PREFIX = os.environ['EMAIL_SUBJECT_PREFIX']
 
 # Application definition
 
@@ -87,18 +90,6 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         "ENGINE": "django.db.backends.postgresql_psycopg2",
-#         "NAME": os.environ["DB_NAME"],
-#         "USER": os.environ["DB_USER"],
-#         "PASSWORD": os.environ["DB_PSWD"],
-#         "HOST": os.environ["DB_HOST"],
-#         "PORT": os.environ["DB_PORT"],
-#     }
-# }
-
 
 urlparse.uses_netloc.append("postgres")
 url = urlparse.urlparse(os.environ["DATABASE_URL"])
