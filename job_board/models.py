@@ -12,7 +12,7 @@ from django.template.loader import render_to_string
 
 SALARY_RANGES = (
     ('n', 'A combinar'),
-    ('j', 'Até R$ 2.500'),
+    ('j', 'Ate R$ 2.500'),
     ('f', 'R$ 2.501 a R$ 3.500'),
     ('s', 'R$ 3.501 a R$ 6.000'),
     ('p', 'Acima de R$ 6.000'),
@@ -35,7 +35,7 @@ class Job(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return self.title.encode('utf8')
 
     class Meta:
         ordering = ['-timestamp']
@@ -50,7 +50,7 @@ class Category(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.title
+        return self.title.encode('utf8')
 
     class Meta:
         verbose_name_plural = "categories"
@@ -61,7 +61,7 @@ class JobType(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.name
+        return self.name.encode('utf8')
 
 # FUNCTIONS
 def create_slug(instance, new_slug=None):
