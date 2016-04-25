@@ -14,8 +14,8 @@ SALARY_RANGES = (
     ('n/a', 'A combinar'),
     ('junior', 'Até R$ 2.500'),
     ('full', 'R$ 2.501 a R$ 3.500'),
-    ('senior', 'R$ 3.501 a R$ 5.000'),
-    ('specialist', 'Acima de R$ 5.000'),
+    ('senior', 'R$ 3.501 a R$ 6.000'),
+    ('specialist', 'Acima de R$ 6.000'),
 )
 
 class Job(models.Model):
