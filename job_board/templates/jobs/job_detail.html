@@ -1,7 +1,5 @@
 {% extends 'jobs/base.html' %}
 
-{% load humanize %}
-
 {% block title %} Vaga para {{ job.title }} em Vagas TI Recife {% endblock %}
 
 {% block content %}
@@ -38,7 +36,7 @@
         <div class="detail-info">
           <h4><span class="fa fa-building"></span><a href="{{ job.site }}" target='_blank'>{{ job.company }}</a></h4>
           <h4><span class="fa fa-suitcase"></span>{{ job.category }}</h4>
-          <h4><span class="fa fa-usd"></span>{% if not job.salary %} N/A {% else %} R$ {{ job.salary|intcomma }} {% endif %}</h4>
+          <h4><span class="fa fa-usd"></span>{{ job.salary }}</h4>
           <h4><span class="fa fa-home"></span>{{ job.job_type|title }}</h4>
         </div>
         <div class="detail-interest">

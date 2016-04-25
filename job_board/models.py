@@ -10,7 +10,13 @@ from django.core.urlresolvers import reverse
 
 from django.template.loader import render_to_string
 
-
+SALARY_RANGES = (
+    ('n/a', 'A combinar'),
+    ('junior', 'Até R$ 2.500'),
+    ('full', 'R$ 2.501 a R$ 3.500'),
+    ('senior', 'R$ 3.501 a R$ 5.000'),
+    ('specialist', 'Acima de R$ 5.000'),
+)
 
 class Job(models.Model):
     published = models.BooleanField(default=False)
@@ -21,7 +27,7 @@ class Job(models.Model):
     email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
-    salary = models.DecimalField(default=0, max_digits=19, decimal_places=2)
+    salary = models.CharField(max_length=100, choices=SALARY_RANGES)
     description = models.TextField()
     about = models.TextField()
     skills = models.TextField()

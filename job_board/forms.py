@@ -32,7 +32,7 @@ class CreateJobForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'placeholder': 'Digite o endereço de email para contato'}),
             'category': forms.Select(),
             'job_type': forms.Select(),
-            'salary': forms.NumberInput(attrs={'required': True}),
+            'salary': forms.Select(attrs={'required': True}),
             'description': forms.Textarea(attrs={'placeholder': 'Digite a descrição da vaga, o mais detalhado possivel.'}),
             'about': forms.Textarea(attrs={'placeholder': 'Fale um pouco da empresa e sua cultura.'}),
             'skills': forms.Textarea(attrs={'placeholder': 'Descreva detalhadamente o que é necessário para se candaditar a vaga.'})
