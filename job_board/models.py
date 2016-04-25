@@ -11,11 +11,11 @@ from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
 SALARY_RANGES = (
-    (1, 'A combinar'),
-    (2, 'Até R$ 2.500'),
-    (3, 'R$ 2.501 a R$ 3.500'),
-    (4, 'R$ 3.501 a R$ 6.000'),
-    (5, 'Acima de R$ 6.000'),
+    ('n', 'A combinar'),
+    ('j', 'Até R$ 2.500'),
+    ('f', 'R$ 2.501 a R$ 3.500'),
+    ('s', 'R$ 3.501 a R$ 6.000'),
+    ('p', 'Acima de R$ 6.000'),
 )
 
 class Job(models.Model):
@@ -27,7 +27,7 @@ class Job(models.Model):
     email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
-    salary = models.CharField(max_length=100, choices=SALARY_RANGES)
+    salary = models.CharField(max_length=1, choices=SALARY_RANGES)
     description = models.TextField()
     about = models.TextField()
     skills = models.TextField()
