@@ -27,7 +27,6 @@ class Job(models.Model):
     email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
-    salary = models.DecimalField(blank=True, default=0, max_digits=19, decimal_places=10)
     salary_range = models.CharField(blank=True, max_length=1, choices=SALARY_RANGES)
     description = models.TextField()
     about = models.TextField()
@@ -36,7 +35,7 @@ class Job(models.Model):
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
-        return self.title.encode('utf8')
+        return self.title
 
     class Meta:
         ordering = ['-timestamp']
@@ -51,7 +50,7 @@ class Category(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.title.encode('utf8')
+        return self.title
 
     class Meta:
         verbose_name_plural = "categories"
@@ -62,7 +61,7 @@ class JobType(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     def __str__(self):
-        return self.name.encode('utf8')
+        return self.name
 
 # FUNCTIONS
 def create_slug(instance, new_slug=None):
