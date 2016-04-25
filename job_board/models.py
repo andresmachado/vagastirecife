@@ -11,11 +11,11 @@ from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
 SALARY_RANGES = (
-    (0, 'A combinar'),
-    (1, 'Até R$ 2.500'),
-    (2, 'R$ 2.501 a R$ 3.500'),
-    (3, 'R$ 3.501 a R$ 6.000'),
-    (4, 'Acima de R$ 6.000'),
+    (1, 'A combinar'),
+    (2, 'Até R$ 2.500'),
+    (3, 'R$ 2.501 a R$ 3.500'),
+    (4, 'R$ 3.501 a R$ 6.000'),
+    (5, 'Acima de R$ 6.000'),
 )
 
 class Job(models.Model):
