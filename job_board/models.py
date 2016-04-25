@@ -11,7 +11,7 @@ from django.core.urlresolvers import reverse
 from django.template.loader import render_to_string
 
 SALARY_RANGES = (
-    ('n/a', 'A combinar'),
+    ('undefined', 'A combinar'),
     ('junior', 'Até R$ 2.500'),
     ('full', 'R$ 2.501 a R$ 3.500'),
     ('senior', 'R$ 3.501 a R$ 6.000'),
