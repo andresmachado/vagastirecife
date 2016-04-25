@@ -16,14 +16,14 @@ class CreateJobForm(forms.ModelForm):
         self.fields['email'].label = "Email para contato"
         self.fields['category'].label = "Contratação"
         self.fields['job_type'].label = "Modalidade"
-        self.fields['salary'].label = "Salário"
+        self.fields['salary_range'].label = "Salário"
         self.fields['description'].label = "Descrição da vaga"
         self.fields['about'].label = "Sobre a empresa"
         self.fields['skills'].label = "Habilidades necessárias"
 
     class Meta:
         model = Job
-        fields = ('title', 'company', 'url', 'site', 'email', 'category', 'job_type', 'salary', 'description', 'about', 'skills',)
+        fields = ('title', 'company', 'url', 'site', 'email', 'category', 'job_type', 'salary_range', 'description', 'about', 'skills',)
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Digite o título da vaga'}),
             'company': forms.TextInput(attrs={'placeholder': 'Digite o nome da empresa'}),
@@ -32,7 +32,7 @@ class CreateJobForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'placeholder': 'Digite o endereço de email para contato'}),
             'category': forms.Select(),
             'job_type': forms.Select(),
-            'salary': forms.Select(attrs={'required': True}),
+            'salary_range': forms.Select(attrs={'required': True}),
             'description': forms.Textarea(attrs={'placeholder': 'Digite a descrição da vaga, o mais detalhado possivel.'}),
             'about': forms.Textarea(attrs={'placeholder': 'Fale um pouco da empresa e sua cultura.'}),
             'skills': forms.Textarea(attrs={'placeholder': 'Descreva detalhadamente o que é necessário para se candaditar a vaga.'})

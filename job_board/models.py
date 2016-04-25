@@ -27,7 +27,7 @@ class Job(models.Model):
     email = models.EmailField()
     category = models.ForeignKey('Category')
     job_type = models.ForeignKey('JobType')
-    salary = models.CharField(max_length=1, choices=SALARY_RANGES)
+    salary_range = models.CharField(blank=True, max_length=1, choices=SALARY_RANGES)
     description = models.TextField()
     about = models.TextField()
     skills = models.TextField()
